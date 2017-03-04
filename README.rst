@@ -24,7 +24,7 @@ Main features
 
 
 
-   .. image:: https://cdn.rawgit.com/fizban99/microbit_ssd1306/7f60064d/microbit_with_logo.jpg
+   .. image:: microbit_timer.jpg
       :width: 100%
       :align: center
 
