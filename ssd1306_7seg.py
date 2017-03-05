@@ -97,8 +97,8 @@ def set_digit(dig, val, dec):
         for i in range(0, 8):
             r1, r2 = b1 >> (7 - i) & 1, b2 >> (7 - i) & 1
             if r2 or r1:
-                set_rect(
-                    [x + y for (x, y) in list(zip(rects[i], [34 * (3 - dig), 34 * (3 - dig), 0, 0]))])
+                offset, rect = 34 * (3 - dig), rects[i]
+                set_rect([rect[0]+offset, rect[1]+offset, rect[2], rect[3]])
                 if r2:  # d and not c:
                     i2c.write(ADDR, segments[i])
                 elif r1:  # not d and c:
@@ -106,8 +106,6 @@ def set_digit(dig, val, dec):
         display[dig] = d
 
 def blink(time=1000):
-    for i in range(0,2):
-        command([0xae])
-        sleep(time/4)
-        command([0xaf])
+    for c in ([0xae], [0xaf]):
+        command(c)
         sleep(time/4)
