@@ -14,3 +14,8 @@ To install the program, flash an empty file with mu and use the file uploader wi
 .. image:: ..\..\microbit_timer.jpg
       :width: 100%
       :align: center
+
+
+.. image:: KitchenTimer.png
+      :width: 100%
+      :align: center
