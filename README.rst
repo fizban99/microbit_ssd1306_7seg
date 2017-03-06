@@ -5,7 +5,7 @@ This library allows the micro:bit to emulate a 7 segment display with the typica
 
 You should connect the device's SCL pin to micro:bit pin 19, and the device's SDA pin to micro:bit pin 20. You also must connect the device's ground to the micro:bit ground (pin GND). 
 
-This library uses the full resolution of the display, since it does not use a display buffer. All segments have been designed not to overlap the area of another segment. Number rendering is really fast, since only segments that change are drawn or cleared. 
+This library uses the full resolution of the display, since it does not use a display buffer. All segments have been designed not to overlap the area of another segment. Number rendering is really fast, since only segments that change are drawn or cleared and the segments have been defined to expand to as few pages as possible. 
 
 The library requires a binary definition of the segments to be loaded (segments.bin) together with the py file. This allows reducing memory consumption at compile time.
 
