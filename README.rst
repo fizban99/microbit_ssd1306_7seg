@@ -9,6 +9,12 @@ This library uses the full resolution of the display, since it does not use a di
 
 The library requires a binary definition of the segments to be loaded (segments.bin) together with the py file to reduce memory consumption.
 
+
+   .. image:: 7segments.png
+      :width: 100%
+      :align: center
+
+
 .. contents::
 
 .. section-numbering::
@@ -45,11 +51,11 @@ Initializes the OLED display with zeros if showZeros is set to 1 and with two do
    initialize(1,1)
 
 
-disp_num(n)
-+++++++++++
+disp_num(n, numDec=0)
++++++++++++++++++++++
 
 
-Displays the number n on the screen. n should be between 0 and 9999
+Displays the number n on the screen, with the decimal point at position numDec. n should be between 0 and 9999. If numDec=0 no decimal point is displayed.
 
 .. code-block:: python
 
@@ -57,3 +63,5 @@ Displays the number n on the screen. n should be between 0 and 9999
    
    initialize(1,1)
    disp_num(1306)
+
+
