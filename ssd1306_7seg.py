@@ -78,34 +78,32 @@ def clear_oled():
         i2c.write(ADDR, screen)
 
 
-def disp_number(n):
+def disp_number(n, decPos=0):
     global dispZeros
     for j in range(0, 4):
         v = (n // 10**j) % 10
+        d = 1 if decPos == j and j > 0 else 0
         if v == 0 and dispZeros == 0:
-            set_digit(j, 10, 0)
+            set_digit(j, 10, d)
         else:
-            set_digit(j, v, 0)
+            set_digit(j, v, d)
 
 
 def set_digit(dig, val, dec):
     global digits, display, segments
 
-    c, d = display[dig], digits[val] + dec
+    c, d = display[dig], digits[val] | dec
     if c != d:
         b1, b2 = c & ~ d, ~c & d
         for i in range(0, 8):
             r1, r2 = b1 >> (7 - i) & 1, b2 >> (7 - i) & 1
             if r2 or r1:
-                offset, rect = 34 * (3 - dig), rects[i]
-                set_rect([rect[0]+offset, rect[1]+offset, rect[2], rect[3]])
+                offset = 34 * (3 - dig)
+                # avoid too much recursion
+                command([0x21, rects[i][0]+offset, rects[i][1]+offset])
+                command([0x22, rects[i][2], rects[i][3]])
                 if r2:  # d and not c:
                     i2c.write(ADDR, segments[i])
                 elif r1:  # not d and c:
                     i2c.write(ADDR, b'\x40' + bytearray(seg_len[i] - 1))
         display[dig] = d
-
-def blink(time=1000):
-    for c in ([0xae], [0xaf]):
-        command(c)
-        sleep(time/4)

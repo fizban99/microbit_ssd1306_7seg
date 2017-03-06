@@ -51,11 +51,9 @@ while True:
             if currTime <= 0:
                 start, offset, currTime = running_time(), 0, 0 
                 play((["B6:1"]*4 + ["R:2"])*3, wait=False)
-                blink(2000)
-                blink(2000)
                 increments, timer = True, 0
         if button_a.is_pressed() or button_b.is_pressed():
             stopped = True
             play(["B6:1"], wait=False)
-            offset = (running_time()-start) % 1000
+            offset = (running_time()-start+offset) % 1000
             wait_unpressed()
