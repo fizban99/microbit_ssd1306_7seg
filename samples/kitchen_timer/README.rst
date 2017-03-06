@@ -10,3 +10,7 @@ To install the program, flash an empty file with mu and use the file uploader wi
 * When counting, if any of the two buttons is pressed, the timer will pause. To restart the timer, press both buttons at the same time again.
 * When the counter reaches 00:00, the microbit will beep and the counter will start counting up.
 * If both buttons are pressed without setting the timer first, the timer will count up.
+
+.. image:: ..\7segments.png
+      :width: 100%
+      :align: center
