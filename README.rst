@@ -91,4 +91,4 @@ According to the above table, to paint a 1 we have to use the value 0x60 at the 
    initialize(0,0)
    set_digit(0,0x60)
 
-Can you make the display show HELO? You can find the hexadecimal codes in the excel file of the tools folder.
+Can you make the display show HELO? You can find the hexadecimal codes in the excel file of the tools folder. Remember that you can use the REPL for quick tests like this.
