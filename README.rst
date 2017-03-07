@@ -46,7 +46,7 @@ Initializes the OLED display with zeros if showZeros is set to 1 and with two do
 
 .. code-block:: python
 
-   from SSD1306_7seg import initialize 
+   from ssd1306_7seg import initialize 
    
    initialize(1,1)
 
@@ -59,7 +59,7 @@ Displays the number n on the screen, with the decimal point at position numDec, 
 
 .. code-block:: python
 
-   from SSD1306_7seg import initialize, disp_num 
+   from ssd1306_7seg import initialize, disp_num 
    
    initialize(1,1)
    disp_num(1306)
@@ -86,7 +86,7 @@ According to the above table, to paint a 1 we have to use the value 0x60 at the 
 
 .. code-block:: python
 
-   from SSD1306_7seg import initialize, set_digit 
+   from ssd1306_7seg import initialize, set_digit 
    
    initialize(0,0)
    set_digit(0,0x60)
