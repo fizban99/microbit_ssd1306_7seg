@@ -76,7 +76,7 @@ set_digit(dig, d)
 Displays the digit definition *d* at position *digit*. A digit definition is created as the resulting binary number of the combination of required segments to paint the number:
 
 
-   .. image:: bit-definition.png
+   .. image:: bit_table.png
       :width: 100%
       :align: center
 
