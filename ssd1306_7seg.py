@@ -84,15 +84,15 @@ def disp_number(n, decPos=0):
         v = (n // 10**j) % 10
         d = 1 if decPos == j and j > 0 else 0
         if v == 0 and dispZeros == 0:
-            set_digit(j, 10, d)
+            set_digit(j,  digits[10] | d)
         else:
-            set_digit(j, v, d)
+            set_digit(j, digits[v] | d)
 
 
-def set_digit(dig, val, dec):
+def set_digit(dig, d):
     global digits, display, segments
 
-    c, d = display[dig], digits[val] | dec
+    c = display[dig]
     if c != d:
         b1, b2 = c & ~ d, ~c & d
         for i in range(0, 8):

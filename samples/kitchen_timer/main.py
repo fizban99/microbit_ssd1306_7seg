@@ -1,4 +1,4 @@
-from ssd1306_7seg import initialize, disp_number, blink
+from ssd1306_7seg import initialize, disp_number
 from microbit import running_time, sleep, button_a, button_b
 from music import play
 
